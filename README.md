@@ -41,7 +41,7 @@ if u're absolutely shure what u're doing, u're able to apply all steps in one
 `terraform apply -auto-approve`
 
 You want to reject this whole deployment? U're able to do this with  
-`terraform apply -destroy`
+`terraform destroy`
 
 ## How to create your own Ubuntu Desktop cloudimage
 
