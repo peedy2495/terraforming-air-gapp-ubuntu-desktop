@@ -4,7 +4,6 @@
     state: latest
     update_cache: yes
   tags:
-    - rollout
     - ntp
     - timesyncd
 
@@ -17,7 +16,6 @@
     mode: 0644
     backup: yes
   tags:
-    - rollout
     - ntp
     - timesyncd
 
@@ -26,6 +24,5 @@
     name: systemd-timesyncd
     state: restarted
   tags:
-    - rollout
     - ntp
     - timesyncd

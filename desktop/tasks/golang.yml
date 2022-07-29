@@ -16,6 +16,8 @@
     mode: 0755
   tags:
     - software-all
+    - software-default
+    - software-apt
     - golang
 
 - name: copy all reqirements to remote instance
@@ -54,9 +56,15 @@
 
 - name: cleanup - go requirements
   become_user: ansible
-  file:
-    path: /home/ansible/project-requirements
-    state: absent
-#  tags:
-#    - golang
-#    - go-requirements
+  block:
+    - name: removing project-requirements
+      file:
+        path: /home/ansible/project-requirements
+        state: absent
+    - name: removing go folder
+      file:
+        path: /home/ansible/go
+        state: absent
+  tags:
+    - golang
+    - go-requirements

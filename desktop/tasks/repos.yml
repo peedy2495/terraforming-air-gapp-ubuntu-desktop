@@ -7,9 +7,9 @@
     patterns: "*"
   register: files_delete
   tags:
-    - rollout
-    - software
-    - apt
+    - software-all
+    - software-default
+    - software-apt
     - repositories
     - repocleanup
 
@@ -19,9 +19,9 @@
     state: absent
   with_items: "{{ files_delete.files }}"
   tags:
-    - rollout
-    - software
-    - apt
+    - software-all
+    - software-default
+    - software-apt
     - repocleanup
 
 - name: native repositories
@@ -33,9 +33,9 @@
     mode: 0644
     backup: yes
   tags:
-    - rollout
-    - software
-    - apt
+    - software-all
+    - software-default
+    - software-apt
     - repositories
 
 - name: vscode Repository
@@ -57,9 +57,9 @@
         mode: 0644
         backup: yes
   tags:
-    - rollout
-    - software
-    - apt
+    - software-all
+    - software-default
+    - software-apt
     - repositories
     - repository-vscode
 
@@ -82,9 +82,9 @@
         mode: 0644
         backup: yes
   tags:
-    - rollout
-    - software
-    - apt
+    - software-all
+    - software-default
+    - software-apt
     - repositories
     - repository-docker-ce
 
@@ -108,9 +108,9 @@
         mode: 0644
         backup: no
   tags:
-    - rollout
-    - software
-    - apt
+    - software-all
+    - software-default
+    - software-apt
     - repositories
     - repository-google-chrome
 
@@ -133,9 +133,9 @@
         mode: 0644
         backup: yes
   tags:
-    - rollout
-    - software
-    - apt
+    - software-all
+    - software-default
+    - software-apt
     - repositories
     - repository-ppa-graphics-drivers
 
@@ -158,9 +158,9 @@
         mode: 0644
         backup: yes
   tags:
-    - rollout
-    - software
-    - apt
+    - software-all
+    - software-default
+    - software-apt
     - repositories
     - repository-ppa-golang-backports
 
@@ -183,9 +183,9 @@
         mode: 0644
         backup: yes
   tags:
-    - rollout
-    - software
-    - apt
+    - software-all
+    - software-default
+    - software-apt
     - repositories
     - repository-node-16
 
@@ -208,9 +208,9 @@
         mode: 0644
         backup: yes
   tags:
-    - rollout
-    - software
-    - apt
+    - software-all
+    - software-default
+    - software-apt
     - repositories
     - repository-qgis
 
@@ -233,8 +233,8 @@
         mode: 0644
         backup: yes
   tags:
-    - rollout
-    - software
-    - apt
+    - software-all
+    - software-default
+    - software-apt
     - repositories
     - repository-kubernetes.io

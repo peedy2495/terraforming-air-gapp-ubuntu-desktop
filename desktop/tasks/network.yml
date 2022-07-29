@@ -4,5 +4,4 @@
     line: "{{ nexus_proxy }} nexus nexus"
     state: present
   tags:
-    - rollout
     - etc-hosts
