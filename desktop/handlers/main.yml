@@ -1,0 +1,10 @@
+- name: redeploy chrome repofile after changes during installation/update
+  listen: redeploy chrome repository
+  template:
+    src: google-chrome.j2
+    dest: /etc/apt/sources.list.d/google-chrome.list
+    owner: root
+    group: root
+    mode: 0644
+    backup: no
+    force: yes

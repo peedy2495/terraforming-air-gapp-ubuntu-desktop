@@ -1,0 +1,11 @@
+---
+all:
+  vars:
+    ansible_ssh_user: "ansible"
+    ansible_ssh_private_key_file: "./tf_priv-key_rsa"
+    ansible_become: yes
+    ansible_become_method: sudo
+    ansible_ssh_common_args: "-o StrictHostKeyChecking=no"
+  children:
+    desktop:
+      hosts: 192.168.100.101

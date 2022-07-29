@@ -1,0 +1,5 @@
+version_yq: "latest"
+version_helm: "v3.9.2"
+version_k9s: "latest"
+version_terraform: "1.2.5"
+version_terraform_provider_proxmox: "2.9.10"

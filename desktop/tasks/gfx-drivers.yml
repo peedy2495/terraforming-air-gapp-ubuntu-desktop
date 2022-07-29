@@ -1,0 +1,9 @@
+- name: Installing NVIDIA gfx drivers
+  apt:
+    pkg:
+      - nvidia-driver-510
+    state: present
+    update_cache: yes
+  tags:
+    - software-all
+    - driver-nvidia

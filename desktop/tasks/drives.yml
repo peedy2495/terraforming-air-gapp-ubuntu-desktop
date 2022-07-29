@@ -1,0 +1,20 @@
+- name: expanding extended partition
+  command: growpart /dev/sda 2
+  ignore_errors: true
+  tags:
+    - rollout
+    - drives
+
+- name: expanding root partition
+  command: growpart /dev/sda 5
+  ignore_errors: true
+  tags:
+    - rollout
+    - drives
+
+- name: expanding root filesystem
+  command: resize2fs /dev/sda5
+  ignore_errors: true
+  tags:
+    - rollout
+    - drives
