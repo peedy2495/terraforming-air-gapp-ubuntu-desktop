@@ -1,22 +1,34 @@
-# Ubuntu Server 20.04 - cloud-init
+# Terraforming a Cloud-Init template for filling Nexus3 proxied repos in an Proxmox hypervisor
 
-This repo is for deploying a precreated proxmox cloud-init template (ubuntu @ vmid:9000).
-I'm using this one e.g. for caching nexus repositories needed by air-gap environments. 
+This repo is for deploying a precreated proxmox cloud-init template (ubuntu 20.04 @ vmid:8000).
+I'm using this one e.g. for caching nexus repositories needing in air-gap environments. 
 
 The file *`vars.tf`* is for defining basic variables.
 
+## Prerequisites:
+1st, a cloud-init image on your hypervisor (how to bake, see below) 
 
-## Terraforming:
-You need a Proxmox api-token and saved it's values in *`token.export`*
+Next, a Proxmox api-token and saved it's values in *`token.export`*
 
-On first use your have to init this repo via  
-( File *`.terraform.lock.hcl`* doesn't exist )  
-`terraform init`
+Create in your main project-dir a file named: token.export  
+Content:  
+```
+export PM_API_TOKEN_ID='your_token_id'
+export PM_API_TOKEN_SECRET='your_token_secret'
+```
 
 In your current shell context you have to set API relevant variables.  
-`source token.export`
+`source token.export`  
+! This have to be done in every new shell-context 
 
-Steps to deploy instances:  
+On first use your have to init this repo via `terraform init`, if `.terraform.lock.hcl`* doesn't exist.
+
+Last, create a rsa keypair for accessing the new instance with  
+`ssh-keygen -t rsa -b 4096 -C "your_email@example.com" -f assets/ssh/tf-deployment_rsa`
+
+## Terraforming:
+
+Steps to deploy instances ...  
 
 create an execution plan
 `terraform plan`  
